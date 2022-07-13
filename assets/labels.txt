@@ -1,0 +1,3 @@
+0 Crying
+1 Angry
+2 Smile

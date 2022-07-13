@@ -1,5 +1,4 @@
 import 'package:blue_eye_complete_project/main.dart';
-import 'package:blue_eye_complete_project/utils/routes.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:tflite/tflite.dart';
@@ -14,23 +13,6 @@ class EmotionDetectionByPosePage extends StatefulWidget {
 
 class _EmotionDetectionByPosePageState
     extends State<EmotionDetectionByPosePage> {
-  bool changeButton = false;
-  final _formKey = GlobalKey<FormState>();
-
-  moveToHome(BuildContext context) async {
-    if (_formKey.currentState!.validate()) {
-      setState(() {
-        changeButton = true;
-      });
-      await Future.delayed(const Duration(seconds: 1));
-      // ignore: use_build_context_synchronously
-      await Navigator.pushNamed(context, MyRoutes.homeRoute);
-      setState(() {
-        changeButton = false;
-      });
-    }
-  }
-
   CameraImage? cameraImage;
   CameraController? cameraController;
   String output = '';

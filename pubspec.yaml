@@ -13,6 +13,7 @@ dependencies:
   tflite:
   image_picker:
   camera:
+  dialog_flowtter:
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -22,3 +23,4 @@ flutter:
   assets:
     - images/
     - assets/
+    - assets/dialog_flow_auth.json

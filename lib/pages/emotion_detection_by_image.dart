@@ -1,12 +1,10 @@
 import 'dart:io';
-import 'package:blue_eye_complete_project/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
 
 class EmotionDetectionByObjectPage extends StatefulWidget {
   const EmotionDetectionByObjectPage({Key? key}) : super(key: key);
-
   @override
   State<EmotionDetectionByObjectPage> createState() =>
       _EmotionDetectionByObjectPageState();
@@ -14,9 +12,6 @@ class EmotionDetectionByObjectPage extends StatefulWidget {
 
 class _EmotionDetectionByObjectPageState
     extends State<EmotionDetectionByObjectPage> {
-  bool changeButton = false;
-  final _formKey = GlobalKey<FormState>();
-
   late File _image;
   late List _results;
   bool imageSelect = false;
@@ -48,20 +43,6 @@ class _EmotionDetectionByObjectPageState
       _image = image;
       imageSelect = true;
     });
-  }
-
-  moveToHome(BuildContext context) async {
-    if (_formKey.currentState!.validate()) {
-      setState(() {
-        changeButton = true;
-      });
-      await Future.delayed(const Duration(seconds: 1));
-      // ignore: use_build_context_synchronously
-      await Navigator.pushNamed(context, MyRoutes.homeRoute);
-      setState(() {
-        changeButton = false;
-      });
-    }
   }
 
   @override
